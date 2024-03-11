@@ -2,17 +2,57 @@
 :root {
     --cardRadius: 16px;
     --cardPhotoHeight: 300px;
-    --cardOffset: 20px;
+    --cardOffset: 16px;
     --cardWidth: 400px;
     --translucentColor: rgba(255, 255, 255, 0.2);
 }
 
+@media screen {
+    .projectGrid {
+        width: 275px;
+        grid-template-columns: repeat(1, 100%);
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .projectGrid {
+        width: 100%;
+        grid-template-columns: repeat(1, 100%);
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .projectGrid {
+        width: 100%;
+        grid-template-columns: repeat(1, 100%);
+        max-width: 768px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .projectGrid {
+        width: 854px;
+        grid-template-columns: repeat(2, 50%);
+        max-width: 854px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .projectGrid {
+        width: 1280px;
+        grid-template-columns: repeat(3, 33.3%);
+        max-width: 1280px;
+    }
+}
+
+
+
+
+
 /* Creating grid used for displaying elements. Need to properly incorporate margins and resizing for different browsers ultimately */
 .projectGrid {
-    width: 100%;
     display: grid;
-    grid-template-columns: [anchor0] 33.3% [anchor1] 33.3% [anchor2] 33.3% [anchor3];
-    row-gap: 40px; /* defining spacing between rows */
+    row-gap: 50px; /* defining spacing between rows */
 }
 
 /* Defining project Entry element, which styles each project card 
@@ -98,6 +138,10 @@
     margin-left: var(--cardOffset);
     margin-right: var(--cardOffset);
     font-family: "DIN2014WebBold";
+    display: -webkit-box; /* creating webkit box to properly clamp text after three lines */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 
 .projectText > p {
@@ -114,28 +158,40 @@
 }
 
 /* Defining custom parameters for double-width entries */
+@media screen and (min-width: 1024px) {
+    .doubleEntry {
+        grid-column: 1 / span 2; /* Ensure the entry spans the first two columns */
+        width: calc(var(--cardWidth) + 50%); /* Make entry as wide as two smaller entries */
+        height: 100%;
+    }
 
-.doubleEntry {
-    grid-column-start: anchor0; /* Ensure the entry spans the first two columns */
-    grid-column-end: anchor2;
-    width: calc(var(--cardWidth) + 50%); /* Make entry as wide as two smaller entries */
+    .doubleEntry > .projectImage {
+        width: calc(100% - var(--cardOffset)); /* change width and height to cover the whole card, minus offsets */
+        height: calc(100% - var(--cardOffset));
+    }
+
+    .doubleEntry > .projectImage > img { 
+        width: calc(100% - var(--cardOffset)); /* changing width and height again */
+        height: calc(100% - var(--cardOffset));
+    }
+
+    .doubleEntry > .projectText {
+        background-color: white; /* establish background color for overlaid text */
+        border-radius: var(--cardRadius);
+        width: calc(var(--cardWidth) - var(--cardOffset));
+        margin-left: calc(100% - var(--cardWidth) + var(--cardOffset));
+    }
 }
 
-.doubleEntry > .projectImage {
-    width: calc(100% - var(--cardOffset)); /* change width and height to cover the whole card, minus offsets */
-    height: calc(100% - var(--cardOffset));
+@media screen and (max-width: 1023px) {
+    .projectEntry {
+        width: calc(100% - 40px);
+    }
 }
 
-.doubleEntry > .projectImage > img { 
-    width: calc(100% - var(--cardOffset)); /* changing width and height again */
-    height: calc(100% - var(--cardOffset));
+@media screen and (max-width: 300px) {
+    .projectEntry {
+        min-width: 220px;
+    }
 }
 
-.doubleEntry > .projectText {
-    background-color: white; /* establish background color for overlaid text */
-    position: absolute; /* pin to the bottom right of the card */
-    bottom: 0;
-    right: 0;
-    border-radius: var(--cardRadius);
-    width: calc(var(--cardWidth) - var(--cardOffset));
-}
