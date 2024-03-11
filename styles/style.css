@@ -2,6 +2,7 @@
 /* Setting base fonts for headers and paragraph elements*/
 h1 {
     font-family: 'DIN2014WebBold';
+    font-size: 48pt;
 }
 
 p {
@@ -16,3 +17,6 @@ body {
     justify-content: center;
 }
 
+:root {
+    background-image: linear-gradient(rgb(240, 233, 243), rgb(170, 160, 212))
+}

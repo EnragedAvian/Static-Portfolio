@@ -7,13 +7,9 @@
     --translucentColor: rgba(255, 255, 255, 0.2);
 }
 
-@media screen {
-    .projectGrid {
-        width: 275px;
-        grid-template-columns: repeat(1, 100%);
-    }
-}
+/* Defining breakpoints */
 
+/* Extra small size (mobile devices) */
 @media screen and (min-width: 300px) {
     .projectGrid {
         width: 100%;
@@ -21,6 +17,7 @@
     }
 }
 
+/* Small size (Large mobile devices and small tablets) */
 @media screen and (min-width: 480px) {
     .projectGrid {
         width: 100%;
@@ -29,6 +26,7 @@
     }
 }
 
+/* Medium size (Large tablets and Laptops) */
 @media screen and (min-width: 1024px) {
     .projectGrid {
         width: 854px;
@@ -37,6 +35,7 @@
     }
 }
 
+/* Large size (Desktops) */
 @media screen and (min-width: 1300px) {
     .projectGrid {
         width: 1280px;
@@ -45,9 +44,80 @@
     }
 }
 
+/* Adding breakpoint to reduce image height in entries to better fit content on screen for smaller screens */
+@media screen and (max-width: 480px) {
+    :root {
+        --cardPhotoHeight: 240px;
+        --cardOffset: 12px;
+        --cardRadius: 12px;
+    }
 
+    .header > .headerContent > .sectionTitle > h1 {
+        font-size: 24pt;
+    }
+}
 
+/* Defining header div which contains section title and subtitle */
+.header {
+    min-width: 220px; /* defining min width for incredibly small windows/devices */
+    grid-column: 1 / -1; /* Spans the entire row */
+    width: calc(100% - 40px + var(--cardOffset));
+    justify-self: center;
+    display: flex;
+    position: relative;
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,.25));
+}
 
+/* Defining  placement of text items */
+.header > .headerContent {
+    width: calc(100% - var(--cardOffset)); 
+    margin-bottom: var(--card);
+    z-index: 1;
+}
+
+/* Defining background for the upper of the two cards */
+.header > .headerContent > .sectionTitle {
+    margin-top: 0;
+    top: 0;
+    background-color: white;
+    border-radius: var(--cardRadius);
+    width: 100%;
+    display: flex;
+}
+
+/* Defining text treatment including background image */
+.header > .headerContent > .sectionTitle  > h1 {
+    margin: 0;
+    margin-top: calc(2 * var(--cardOffset));
+    margin-left: var(--cardOffset);
+    padding: var(--cardOffset);
+    padding-inline: calc(2 * var(--cardOffset));
+    width: 100%;
+    color: white;
+    background-image: url(/assets/images/sample-blur.jpg);
+    background-size: cover; /* Allow background image to completely cover blurred layer*/
+    background-position: center center; /* Ensure position is centered properly */
+    border-top-left-radius: var(--cardRadius);
+    border-bottom-right-radius: var(--cardRadius);
+}
+
+/* Defining body content */
+.header > .headerContent > p {
+    margin-left: calc(3 * var(--cardOffset));
+    margin-right: calc(2 * var(--cardOffset));
+}
+
+/* Defining bottom card which covers the subheader text */
+.header > .bottomCard {
+    background-color: white;
+    border-radius: var(--cardRadius);
+    position: absolute;
+    height: calc(100% - 2 * var(--cardOffset));
+    width: calc(100% - var(--cardOffset));
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+}
 
 /* Creating grid used for displaying elements. Need to properly incorporate margins and resizing for different browsers ultimately */
 .projectGrid {
@@ -133,8 +203,9 @@
 }
 
 /* Defining header text information */
-.projectText > h1 {
+.projectText > h3 {
     margin: 12px;
+    font-size: 22pt;
     margin-left: var(--cardOffset);
     margin-right: var(--cardOffset);
     font-family: "DIN2014WebBold";
@@ -183,8 +254,13 @@
     }
 }
 
+/* Additional breakpoint fixes */
 @media screen and (max-width: 1023px) {
     .projectEntry {
+        width: calc(100% - 40px);
+    }
+
+    .header {
         width: calc(100% - 40px);
     }
 }
