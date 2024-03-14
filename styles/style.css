@@ -1,4 +1,9 @@
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 /* Setting base fonts for headers and paragraph elements*/
 h1 {
     font-family: 'DIN2014WebBold';
@@ -10,13 +15,10 @@ p {
 }
 
 body {
+    margin: 0;
     margin-top: 100px;
-    margin-left: 0;
-    margin-right: 0;
-    display: flex;
-    justify-content: center;
 }
 
 :root {
-    background-image: linear-gradient(rgb(240, 233, 243), rgb(170, 160, 212))
+    background-image: linear-gradient(rgb(240, 233, 243), rgb(170, 160, 212));
 }

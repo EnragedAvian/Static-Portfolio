@@ -103,8 +103,10 @@
 
 /* Defining body content */
 .header > .headerContent > p {
+    margin: var(--cardOffset);
     margin-left: calc(3 * var(--cardOffset));
     margin-right: calc(2 * var(--cardOffset));
+
 }
 
 /* Defining bottom card which covers the subheader text */
@@ -122,6 +124,7 @@
 /* Creating grid used for displaying elements. Need to properly incorporate margins and resizing for different browsers ultimately */
 .projectGrid {
     display: grid;
+    margin: auto;
     row-gap: 50px; /* defining spacing between rows */
 }
 
@@ -226,6 +229,40 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+}
+
+.footer {
+    background-image: linear-gradient(rgba(255, 255, 255, 0), 40%, rgb(255, 255, 255));
+    padding-top: 20px;
+}
+
+.footer p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    & a {
+        color: black;
+    }
+}
+
+.footer .icons {
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    justify-content: center;
+    background-color: rgb(2, 2, 2);
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,.25));
+    width: 150px;
+    margin: auto;
+    padding: 10px;
+    border-radius: var(--cardRadius);
+    margin-top: 20px;
+}
+
+.footer > .icons > a > img {
+    height: 32px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* Defining custom parameters for double-width entries */
