@@ -5,7 +5,7 @@
 	src: 
 		url('fonts/DIN-2014_Bold.woff2') format('woff2'),
 		url('fonts/DIN-2014_Bold.woff') format('woff');
-	font-weight: normal;
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -17,7 +17,7 @@
 	font-family: 'KlavikaWebBasic';
 	src: url('fonts/KlavikaWebBasicRegular.woff2') format('woff2'),
 	     url('fonts/KlavikaWebBasicRegular.woff') format('woff');
-	font-weight: 400;
+	font-weight: normal;
 	font-style: normal;
 	}
 
@@ -26,7 +26,7 @@
 	font-family: 'KlavikaWebBasic';
 	src: url('fonts/KlavikaWebBasicRegularItalic.woff2') format('woff2'),
 	     url('fonts/KlavikaWebBasicRegularItalic.woff') format('woff');
-	font-weight: 400;
+	font-weight: normal;
 	font-style: italic;
 	}
 
@@ -35,7 +35,7 @@
 	font-family: 'KlavikaWebBasic';
 	src: url('fonts/KlavikaWebBasicBold.woff2') format('woff2'),
 	     url('fonts/KlavikaWebBasicBold.woff') format('woff');
-	font-weight: 700;
+	font-weight: bold;
 	font-style: normal;
 	}
 
@@ -44,7 +44,7 @@
 	font-family: 'KlavikaWebBasic';
 	src: url('fonts/KlavikaWebBasicBoldItalic.woff2') format('woff2'),
 	     url('fonts/KlavikaWebBasicBoldItalic.woff') format('woff');
-	font-weight: 700;
+	font-weight: bold;
 	font-style: italic;
 	}
 
@@ -53,24 +53,24 @@
 */
 .KlavikaWebBasicRegular {
 	font-family: 'KlavikaWebBasic';
-	font-weight: 400;
+	font-weight: normal;
 	font-style: normal;
 	}
 
 .KlavikaWebBasicRegularItalic {
 	font-family: 'KlavikaWebBasic';
-	font-weight: 400;
+	font-weight: normal;
 	font-style: italic;
 	}
 
 .KlavikaWebBasicBold {
 	font-family: 'KlavikaWebBasic';
-	font-weight: 700;
+	font-weight: bold;
 	font-style: normal;
 	}
 
 .KlavikaWebBasicBoldItalic {
 	font-family: 'KlavikaWebBasic';
-	font-weight: 700;
+	font-weight: bold;
 	font-style: italic;
 	}

@@ -7,9 +7,11 @@
     top: 0;
     left: 0;
     right: 0;
-    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
     /*background:rgb(207, 203, 203);*/
     z-index: 1000;
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.329) 50%, rgba(255, 255, 255, 0.137) 70%, rgba(255, 255, 255, 0));
 }
 
 .navLinks {

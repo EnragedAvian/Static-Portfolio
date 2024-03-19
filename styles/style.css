@@ -5,9 +5,8 @@
 }
 
 /* Setting base fonts for headers and paragraph elements*/
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'DIN2014WebBold';
-    font-size: 48pt;
 }
 
 p {
@@ -16,9 +15,44 @@ p {
 
 body {
     margin: 0;
-    margin-top: 100px;
 }
 
 :root {
     background-image: linear-gradient(rgb(240, 233, 243), rgb(170, 160, 212));
+}
+
+.footer {
+    background-image: linear-gradient(rgba(255, 255, 255, 0), 40%, rgb(255, 255, 255));
+    padding-top: 20px;
+}
+
+.footer p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    & a {
+        color: black;
+    }
+}
+
+.footer .icons {
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    justify-content: center;
+    background-color: rgb(2, 2, 2);
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,.25));
+    width: 150px;
+    margin: auto;
+    padding: 10px;
+    border-radius: var(--cardRadius);
+    margin-top: 20px;
+}
+
+.footer > .icons > a {
+    margin-left: 10px;
+    margin-right: 10px;
+    & img {
+        height: 32px;
+    }
 }
