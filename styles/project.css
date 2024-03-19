@@ -6,12 +6,73 @@
     --bodyWidth: 900px;
     --bodyMargin: 60px;
     --minBodyMargin: 20px;
+    --maxThumbWidth: 1024px;
+}
+
+/* Defining breakpoints */
+
+/* Extra small size (mobile devices) */
+@media screen and (max-width: 479px) {
+    :root {
+        --bodyMargin: 20px !important;
+        --minBodyMargin: 10px !important;
+        --primaryBorderRadius: 12px;
+
+    }
+
+    article {
+        min-width: calc(300px - 2 * var(--bodyMargin) - 2 * var(--minBodyMargin)) !important;
+        margin-left: var(--minBodyMargin) !important;
+        margin-right: var(--minBodyMargin) !important;
+    }
+
+    .header {
+        min-width: 300px;
+    }
+}
+
+/* Special formatting for smaller screen sizes */
+@media screen and (max-width: 768px) {
+    :root {
+        --bodyMargin: 40px;
+    }
+
+    .imgGrid {
+        row-gap: 5px !important;
+        column-gap: 5px !important;
+    }
+
+    .headerText h1 {
+        font-size: 3em !important;
+    }
+
+    article {
+        padding-top: 0px !important;
+    }
+}
+
+/* Small size (Large mobile devices and small tablets) 
+    - Specifically removing border radius around header image
+*/
+@media screen and (max-width: 1023px) {
+    .header img.thumb {
+        border-radius: 0px !important;
+    }
+
+    .header .headerText {
+        width: calc(100% - 2 * var(--minBodyMargin)) !important;
+    }
+
+    article {
+        width: calc(100% - 2 * var(--bodyMargin) - 2 * var(--minBodyMargin)) !important;
+    }
+
 }
 
 /* Defining parameters for header photo and text */
 .header {
     width: 100%;
-    padding-top: 100px; /* add padding to account for navbar */
+    padding-top: 80px; /* add padding to account for navbar */
     position: relative;
     padding-bottom: 100px;
     z-index: 1;
@@ -121,6 +182,7 @@ article {
     z-index: 2; /* ensures it gets drawn above the header background */
     background-color: white;
     max-width: calc(var(--bodyWidth) - 2 * var(--bodyMargin)); /* ensures content is spaced enough by margin */
+    width: 100%;
     margin: auto;
     position: relative;
     margin-top: -50px;
