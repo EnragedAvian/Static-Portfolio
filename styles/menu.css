@@ -1,3 +1,5 @@
+
+
 .navbar {
     display: flex;
     height: 64px;
@@ -61,6 +63,7 @@
 .logo {
     height: 80%;
     margin-left: 20px;
+    background-color: gray;
 }
 
 .logo > a > img {

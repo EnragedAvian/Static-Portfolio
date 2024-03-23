@@ -3,20 +3,22 @@
     <head>
         <title>Page Title</title>
         <link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" href="styles/menu.css">
         <link rel="stylesheet" href="styles/fonts.css">
         <link rel="stylesheet" href="styles/project.css">
     </head>
-    <nav class="navbar">
-        <div class="logo">
+    <nav id="navbar">
+        <div id="logo">
             <a href="index.html">
                 <img src="assets/images/Logo-mini.png">
             </a>
         </div>
-        <div class="navLinks">
+        <div id="navLinks">
             <a class="active" href="index.html">PROJECTS</a>
             <a class="inactive" href="">BLOG</a>
             <a class="inactive" href="">ABOUT</a>
+        </div>
+        <div id="hamburgerButton">
+            <a class="inactive">&#x2261</a>
         </div>
     </nav>
     <body>
@@ -29,7 +31,7 @@
             </div>
             <div class="blurCard"></div>
             <div class="overlayCard"></div>
-            <img src="assets/images/sample-image.png" class="background">
+            <div style="background-image: url(assets/images/sample-image.png);" class="headerBackground"></div>
         </header>
         <article>
             <p>
@@ -80,10 +82,10 @@
             </p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Purus gravida quis blandit turpis cursus in hac habitasse platea. Elit sed vulputate mi sit amet mauris commodo quis.</p>
-            
+
             <figure>
                 <div class="imgGrid">
-                    <img src="assets/images/sample-image.png">
+                    <img class="clickable" src="assets/images/sample-image-123x456.jpg" alt="description of this image">
                     <img src="assets/images/sample-image.png">
                     <img src="assets/images/sample-image.png">
                     <img src="assets/images/sample-image.png">
@@ -108,4 +110,10 @@
         </div>
         
     </body>
+
+    
 </html>
+
+
+<script defer src="js/modal.js"></script>
+<script defer src="js/menu.js"></script>
